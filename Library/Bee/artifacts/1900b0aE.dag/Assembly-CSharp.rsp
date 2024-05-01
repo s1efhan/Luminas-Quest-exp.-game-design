@@ -357,6 +357,7 @@
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"
 "Assets/BrokenVector/LowPolyDungeon/Demo Scenes/ScreenshotMaker.cs"
 "Assets/DoorController.cs"
+"Assets/FireflyParticleSystem.cs"
 "Assets/PlayerController.cs"
 "Assets/playercopy.cs"
 "Assets/PlayerCopyController.cs"

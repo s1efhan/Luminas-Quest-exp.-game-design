@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,10 +24,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.visible = true;
+        UnityEngine.Cursor.visible = false;
     }
 
-    private void Update()
+         private void Update()
     {
         
         // Check if the player is running

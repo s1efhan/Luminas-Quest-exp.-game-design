@@ -777,8 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100777a532c824f4496a0c300fdb76db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 8679225987745204532, guid: d5fc436e5e75bdf4d8248199ad39b047, type: 3}
-  recordTime: 30
+  playerPrefab: {fileID: 8679225987745204532, guid: 903638a887b96c042839100fb2b57bfe, type: 3}
+  recordTime: 10
 --- !u!1 &396040780
 GameObject:
   m_ObjectHideFlags: 0

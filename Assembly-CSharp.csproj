@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\playercopy.cs" />
+    <Compile Include="Assets\FireflyParticleSystem.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\WindradController.cs" />
     <Compile Include="Assets\replay.cs" />
