@@ -39,7 +39,9 @@ public class BonbonCollector : MonoBehaviour
             SpawnNewBonbon();
             Destroy(other.gameObject); // Optional: Die eingesammelte Kugel entfernen
             AudioSource.PlayClipAtPoint(audioClip, mainCamera.transform.position);
-           
+            GetComponentInChildren<Light>().intensity= GetComponentInChildren<Light>().intensity + 0.5f;
+            GetComponentInChildren<Light>().range = GetComponentInChildren<Light>().range + 1f;
+
         }
     }
 }
