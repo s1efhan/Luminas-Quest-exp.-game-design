@@ -356,6 +356,7 @@
 "Assets/DoorController.cs"
 "Assets/PlayerController.cs"
 "Assets/ScoreManager.cs"
+"Assets/Scripts/TriggerDoorController.cs"
 "Assets/WindradController.cs"
 -langversion:9.0
 
