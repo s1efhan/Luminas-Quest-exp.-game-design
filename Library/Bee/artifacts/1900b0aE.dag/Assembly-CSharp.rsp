@@ -363,6 +363,7 @@
 "Assets/PlayerCopyController.cs"
 "Assets/replay.cs"
 "Assets/ScoreManager.cs"
+"Assets/Scripts/CylinderButton.cs"
 "Assets/Scripts/TriggerDoorController.cs"
 "Assets/WindradController.cs"
 -langversion:9.0
