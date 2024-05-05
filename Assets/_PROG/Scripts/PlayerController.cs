@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true;
+    public Animator animator;
 
     private void Start()
     {
@@ -61,9 +62,19 @@ public class PlayerController : MonoBehaviour
         moveDirection.z = movement.z;
         characterController.Move(moveDirection * Time.deltaTime);
 
+        if (movement.magnitude > 0.0f)
+        {
+            animator.SetBool("walking", true);
+        }
+        else
+        {
+            animator.SetBool("walking", false);
+        }
+
         // Player rotation based on mouse input
         if (canMove)
         {
+
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
