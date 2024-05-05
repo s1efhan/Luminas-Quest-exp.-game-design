@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 603474304157153269}
   - component: {fileID: 4675596116110868264}
   - component: {fileID: 6527660559364017993}
+  - component: {fileID: 5150319084130808729}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -270,6 +271,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3265778715863390638}
   lookSpeed: 2.5
   lookXLimit: 45
+  rotationSpeed: 100
   canMove: 1
 --- !u!23 &3897051195983681535
 MeshRenderer:
@@ -396,6 +398,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8679225987745204532, guid: 903638a887b96c042839100fb2b57bfe, type: 3}
   recordTime: 10
+--- !u!114 &5150319084130808729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781333023300349171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6853443a484da5488a03cff4575b414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireflyParticles: {fileID: 0}
+  fireflyBodyTarget: {fileID: 7177339303502894264, guid: d5fc436e5e75bdf4d8248199ad39b047, type: 3}
+  activateFireflyBody: 0
 --- !u!1 &1100383452084142624
 GameObject:
   m_ObjectHideFlags: 0
