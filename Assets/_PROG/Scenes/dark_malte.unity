@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5810457664814426924, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6527660559364017993, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: firefliesEffect
@@ -3500,6 +3500,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 011ca9ca00b21594c8a16ee78d6a8c7c, type: 3}
+--- !u!20 &1682473084 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3265778715863390638, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+  m_PrefabInstance: {fileID: 301563956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1686382084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 011ca9ca00b21594c8a16ee78d6a8c7c, type: 3}
@@ -3580,7 +3585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1909530869832321744, guid: 9f23de2cb2645bf4098e233fabe5a97e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.1
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 1909530869832321744, guid: 9f23de2cb2645bf4098e233fabe5a97e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4043,6 +4048,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 880155305094310809, guid: 910f9599404976f41b90f4fc5ba563e1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 880155305094310809, guid: 910f9599404976f41b90f4fc5ba563e1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756642025495718880, guid: 910f9599404976f41b90f4fc5ba563e1, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756642025495718880, guid: 910f9599404976f41b90f4fc5ba563e1, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5814401706226733244, guid: 910f9599404976f41b90f4fc5ba563e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4157,10 +4178,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1673114641980139945, guid: 5f35581255c5d1a45b1eddf683f6fbab, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1682473084}
     - target: {fileID: 1679656337556198929, guid: 5f35581255c5d1a45b1eddf683f6fbab, type: 3}
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 2224287643996599960, guid: 5f35581255c5d1a45b1eddf683f6fbab, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1682473084}
     - target: {fileID: 4336361127079399694, guid: 5f35581255c5d1a45b1eddf683f6fbab, type: 3}
       propertyPath: m_Size.y
       value: 0

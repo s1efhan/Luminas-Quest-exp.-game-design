@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
+            animator.SetTrigger("jump");
             moveDirection.y = jumpSpeed;
         }
 
