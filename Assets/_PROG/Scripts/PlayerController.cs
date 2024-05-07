@@ -62,12 +62,21 @@ public class PlayerController : MonoBehaviour
         moveDirection.z = movement.z;
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (movement.magnitude > 0.0f)
+        if(isRunning)
+        {
+            animator.SetBool("running", true);
+        }
+        else
+        {
+            animator.SetBool("running", false);
+        }
+        if (Input.GetAxis("Vertical") > 0.0f)
         {
             animator.SetBool("walking", true);
         }
         else
         {
+            animator.SetBool("running", false);
             animator.SetBool("walking", false);
         }
 
