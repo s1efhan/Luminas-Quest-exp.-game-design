@@ -367,6 +367,7 @@
 "Assets/_PROG/Scripts/FirefliesEffect.cs"
 "Assets/_PROG/Scripts/FireflyController.cs"
 "Assets/_PROG/Scripts/FireflyParticleSystem.cs"
+"Assets/_PROG/Scripts/lightscript.cs"
 "Assets/_PROG/Scripts/PlayerController.cs"
 "Assets/_PROG/Scripts/PlayerCopyController.cs"
 "Assets/_PROG/Scripts/replay.cs"

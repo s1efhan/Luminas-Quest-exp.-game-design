@@ -63,6 +63,7 @@
     <Compile Include="Assets\_PROG\Scripts\PlayerCopyController.cs" />
     <Compile Include="Assets\_PROG\Scripts\replay.cs" />
     <Compile Include="Assets\_PROG\Scripts\BonbonCollector.cs" />
+    <Compile Include="Assets\_PROG\Scripts\lightscript.cs" />
     <Compile Include="Assets\_PROG\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\_PROG\Scripts\WindradController.cs" />
