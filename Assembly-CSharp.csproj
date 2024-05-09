@@ -76,6 +76,7 @@
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\_PROG\Scripts\BloomAnimator.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyController.cs" />
+    <Compile Include="Assets\_PROG\Scripts\lever.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyParticleSystem.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
     <Compile Include="Assets\_PROG\Scripts\DoorController.cs" />
