@@ -12,19 +12,16 @@ public class PlayerController : MonoBehaviour
     public float lookSpeed = 2.5f;
     public float lookXLimit = 45.0f;
     public float rotationSpeed = 100.0f;
+    public Animator animator;
+    public ParticleSystem part;
+    public AudioClip fart;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
-    private bool isRunning = false;
-    private bool isCrouching = false;
-    public bool canMove = true;
-    public Animator animator;
-    public ParticleSystem part;
-    public AudioClip fart;
-    private float timeSinceLastPlay = 0f; 
-    private float delay = 3f; 
-
+    private float timeSinceLastPlay = 0f;
+    private float delay = 0.5f;
+    private bool canMove = true;
 
     private void Start()
     {
@@ -35,53 +32,59 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        isRunning = Input.GetKey(KeyCode.LeftShift);
-        isCrouching = Input.GetKey(KeyCode.LeftControl);
-        float currentSpeed = canMove ? (isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed)) : 0;
+        HandleMovement();
+        HandleActions();
+    }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        bool isMoving = moveHorizontal != 0.0f || moveVertical != 0.0f;
+    void HandleMovement()
+    {
+        if (!canMove) return;
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        movement = Vector3.ClampMagnitude(movement, 1.0f);
-        movement = transform.TransformDirection(movement);
-        movement *= currentSpeed;
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+        float speed = isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (movement != Vector3.zero)
+        {
+            movement = transform.TransformDirection(movement.normalized) * speed;
+            animator.SetBool("walking", true);
+            animator.SetBool("running", isRunning);
+            animator.SetBool("crouching", isCrouching);
+        }
+        else
+        {
+            animator.SetBool("walking", false);
+            animator.SetBool("running", false);
+            animator.SetBool("crouching", isCrouching);
+        }
+
+        if (Input.GetButtonDown("Jump") && characterController.isGrounded)
         {
             animator.SetTrigger("jump");
             moveDirection.y = jumpSpeed;
         }
 
-
-        timeSinceLastPlay += Time.deltaTime; // Zeit aktualisieren
-
-        if (Input.GetKey(KeyCode.F) && timeSinceLastPlay >= delay)
-        {
-            part.Play();
-            AudioSource.PlayClipAtPoint(fart, playerCamera.transform.position);
-            timeSinceLastPlay = 0f; // Zeit zurücksetzen, nachdem der Sound gespielt wurde
-        }
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-
         moveDirection.x = movement.x;
         moveDirection.z = movement.z;
+        moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
 
-        animator.SetBool("crouching", isCrouching);
-        animator.SetBool("running", isRunning);
-        animator.SetBool("walking", isMoving);
+        // Player camera rotation
+        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+    }
 
-        if (canMove)
+    void HandleActions()
+    {
+        timeSinceLastPlay += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.F) && timeSinceLastPlay >= delay)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            part.Play();
+            timeSinceLastPlay = 0f;
+            AudioSource.PlayClipAtPoint(fart, playerCamera.transform.position);
         }
     }
 }
