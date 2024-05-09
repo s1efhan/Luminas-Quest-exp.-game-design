@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching = false;
     public bool canMove = true;
     public Animator animator;
+    public ParticleSystem part;
+    public AudioClip fart;
+    private float timeSinceLastPlay = 0f; 
+    private float delay = 3f; 
+
 
     private void Start()
     {
@@ -49,6 +54,15 @@ public class PlayerController : MonoBehaviour
             moveDirection.y = jumpSpeed;
         }
 
+
+        timeSinceLastPlay += Time.deltaTime; // Zeit aktualisieren
+
+        if (Input.GetKey(KeyCode.F) && timeSinceLastPlay >= delay)
+        {
+            part.Play();
+            AudioSource.PlayClipAtPoint(fart, playerCamera.transform.position);
+            timeSinceLastPlay = 0f; // Zeit zurücksetzen, nachdem der Sound gespielt wurde
+        }
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
