@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float timeSinceLastPlay = 0f;
     private float delay = 0.5f;
     private bool canMove = true;
+    public string currentColor = "yellow";
 
     private void Start()
     {

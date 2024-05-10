@@ -1,21 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CylinderButton : MonoBehaviour
 {
-    [SerializeField] private Animator buttonAnimator = null;
-    private void OnCollisionEnter(Collision collision)
+    public string color;
+    public Material material;
+    public ParticleSystem part;
+    private Animator animator;
+    private ParticleSystem selfpart;
+    private void Start()
+    {
+        animator= GetComponent<Animator>();
+        selfpart= GetComponentInChildren<ParticleSystem>();
+    }
+    private void OnTriggerEnter(Collider other)
     {
         // Check if the collision is with the player
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            // For Animator Controller-based animation
-            buttonAnimator.Play("ButtonPress", 0, 0.0f);
-
-            // Execute button action or trigger event
-            Debug.Log("Button pressed by player!");
+            selfpart.Play();    
+            animator.SetTrigger("Press");
+            PlayerController controller = other.GetComponent<PlayerController>();
+            controller.currentColor = color;
+            part.GetComponent<ParticleSystemRenderer>().material = material;
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("5");
+        animator.SetTrigger("Leave");
     }
 }
 

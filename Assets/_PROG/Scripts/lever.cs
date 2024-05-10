@@ -1,36 +1,52 @@
+using System.Collections;
 using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
     private bool isPlayerNear = false;
-    private Animator leverAnimator;
+    public Animator leverAnimator;
+    public AudioClip clip;
+    public Camera playerCamera;
+    private float timeSinceLastPlay = 0f;
+    private float delay = 0.5f;
+
+    void Awake()
+    {
+        leverAnimator = GetComponent<Animator>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Lever"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Kollision mit Lever");
             isPlayerNear = true;
-            leverAnimator = other.GetComponent<Animator>();
-        }
+            playerCamera = other.GetComponentInChildren<Camera>();
+}
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Lever"))
+        if (other.CompareTag("Player"))
         {
             isPlayerNear = false;
-            leverAnimator = null;
         }
+    }
+
+    IEnumerator DelayedAction(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+        EventManager.Instance.LeverPulled();
     }
 
     void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
+        timeSinceLastPlay += Time.deltaTime;
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E) && timeSinceLastPlay >= delay)
         {
-            Debug.Log("Input E gedrückt");
             leverAnimator.SetTrigger("Lever");
+            AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
+            StartCoroutine(DelayedAction(0.5f));
+   
         }
     }
 }
-
