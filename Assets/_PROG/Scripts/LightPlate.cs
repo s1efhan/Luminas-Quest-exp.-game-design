@@ -54,53 +54,64 @@ public class LightScript : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (!activated && other.CompareTag("Player"))
-        {
-            PlayerController playerController = other.GetComponent<PlayerController>();
-            if (playerController == null)
+        if (other.CompareTag("Player")) {
+            if (!activated)
             {
-                Debug.LogError("PlayerController component not found on the player object!");
-                return;
-            }
+                PlayerController playerController = other.GetComponent<PlayerController>();
+                if (playerController == null)
+                {
+                    Debug.LogError("PlayerController component not found on the player object!");
+                    return;
+                }
 
-            string playerColor = playerController.currentColor;
-            Renderer renderer = GetComponent<Renderer>();
-            if (renderer == null)
+                string playerColor = playerController.currentColor;
+                Renderer renderer = GetComponent<Renderer>();
+                if (renderer == null)
+                {
+                    Debug.LogError("Renderer component not found on the light object!");
+                    return;
+                }
+
+                // Material der Lichtplatte ändern
+                Material newMaterial = GetMaterialByColor(playerColor);
+                renderer.material = newMaterial;
+
+                // Material des Particle Systems ändern
+                ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+                if (particleSystem == null)
+                {
+                    Debug.LogError("ParticleSystem component not found in the light's children!");
+                    return;
+                }
+                ParticleSystemRenderer psRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
+                if (psRenderer == null)
+                {
+                    Debug.LogError("ParticleSystemRenderer component not found on the ParticleSystem!");
+                    return;
+                }
+                psRenderer.material = newMaterial;
+
+                Camera playerCamera = other.GetComponentInChildren<Camera>();
+                if (playerCamera == null)
+                {
+                    Debug.LogError("Camera component not found in the player's children!");
+                    return;
+                }
+
+                AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
+                particleSystem.Play();
+
+                activated = true;
+            }
+            else if (activated)
             {
-                Debug.LogError("Renderer component not found on the light object!");
-                return;
+                PlayerController controller = other.GetComponent<PlayerController>();
+                if (controller.isCrouching)
+                {
+                    this.Deactivate();
+                }
             }
-
-            // Material der Lichtplatte ändern
-            Material newMaterial = GetMaterialByColor(playerColor);
-            renderer.material = newMaterial;
-
-            // Material des Particle Systems ändern
-            ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
-            if (particleSystem == null)
-            {
-                Debug.LogError("ParticleSystem component not found in the light's children!");
-                return;
-            }
-            ParticleSystemRenderer psRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
-            if (psRenderer == null)
-            {
-                Debug.LogError("ParticleSystemRenderer component not found on the ParticleSystem!");
-                return;
-            }
-            psRenderer.material = newMaterial;
-
-            Camera playerCamera = other.GetComponentInChildren<Camera>();
-            if (playerCamera == null)
-            {
-                Debug.LogError("Camera component not found in the player's children!");
-                return;
-            }
-
-            AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
-            particleSystem.Play();
-
-            activated = true;
-        }
+                }
+        
     }
 }
