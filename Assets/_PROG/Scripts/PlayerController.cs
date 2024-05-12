@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private float delay = 0.5f;
     private bool canMove = true;
     public string currentColor = "yellow";
+    private bool handstand = false;
 
     private void Start()
     {
@@ -66,6 +67,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("jump");
             moveDirection.y = jumpSpeed;
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            animator.SetBool("handstand", handstand);
+            handstand = handstand ?  false :  true;
         }
 
         moveDirection.x = movement.x;
