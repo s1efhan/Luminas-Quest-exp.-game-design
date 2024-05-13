@@ -124,8 +124,13 @@ MonoBehaviour:
   blueMaterial: {fileID: 2100000, guid: c88e61e954aa95449bd0354654c22813, type: 2}
   greenMaterial: {fileID: 2100000, guid: 4a50796fa0b61ab40b24d849eee3cfc7, type: 2}
   yellowMaterial: {fileID: 2100000, guid: e1440ca94006b4d4eafcf34a32b416c2, type: 2}
+  Tr_redMaterial: {fileID: 2100000, guid: 8f51d0688df2dc841be9647f126552e5, type: 2}
+  Tr_blueMaterial: {fileID: 2100000, guid: 29562a4cd7c360d48a14904b1804f5a1, type: 2}
+  Tr_greenMaterial: {fileID: 2100000, guid: c9ee97fe7c263bb499a157ed6eb98097, type: 2}
+  Tr_yellowMaterial: {fileID: 2100000, guid: b61691898a53cab4b9eb8e3ee26317c0, type: 2}
   defaultMaterial: {fileID: 2100000, guid: e1440ca94006b4d4eafcf34a32b416c2, type: 2}
   clip: {fileID: 8300000, guid: ced7c09d955e74b70a97af69106fb289, type: 3}
+  prefab: {fileID: 4501901569238868033, guid: ce9645e3e79d07147bc5e44e718c54e2, type: 3}
 --- !u!1 &7077018525572417616
 GameObject:
   m_ObjectHideFlags: 0

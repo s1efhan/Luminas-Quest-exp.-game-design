@@ -8,11 +8,17 @@ public class LightScript : MonoBehaviour
     public Material blueMaterial;
     public Material greenMaterial;
     public Material yellowMaterial;
+    public Material Tr_redMaterial;
+    public Material Tr_blueMaterial;
+    public Material Tr_greenMaterial;
+    public Material Tr_yellowMaterial;
     public Material defaultMaterial;
     public AudioClip clip;
     private bool activated = false;
+    public GameObject prefab;
 
     private Dictionary<string, Material> materialMap = new Dictionary<string, Material>();
+    private Dictionary<Material, Material> TrMap = new Dictionary<Material, Material>();
 
     void Awake()
     {
@@ -21,6 +27,11 @@ public class LightScript : MonoBehaviour
         materialMap.Add("blue", blueMaterial);
         materialMap.Add("green", greenMaterial);
         materialMap.Add("yellow", yellowMaterial);
+
+        TrMap.Add(redMaterial, Tr_redMaterial);
+        TrMap.Add(blueMaterial, Tr_blueMaterial);
+        TrMap.Add(yellowMaterial, Tr_yellowMaterial);
+        TrMap.Add(greenMaterial, Tr_greenMaterial);
     }
 
     private void OnEnable()
@@ -46,6 +57,7 @@ public class LightScript : MonoBehaviour
         return defaultMaterial;
     }
 
+
     public void Deactivate()
     {
         Renderer renderer = GetComponent<Renderer>();
@@ -55,7 +67,8 @@ public class LightScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
-            if (!activated)
+            PlayerController controller = other.GetComponent<PlayerController>();
+            if (!activated && !controller.isCrouching)
             {
                 PlayerController playerController = other.GetComponent<PlayerController>();
                 if (playerController == null)
@@ -98,18 +111,20 @@ public class LightScript : MonoBehaviour
                     return;
                 }
 
+
+                Vector3 spawnPosition = this.transform.position;
+                spawnPosition.y -= 1; // Position 3 Einheiten unter dem Referenzobjekt
+                prefab.GetComponent<Renderer>().material = TrMap[newMaterial];
+                Instantiate(prefab, spawnPosition, Quaternion.identity);
+
                 AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
                 particleSystem.Play();
 
                 activated = true;
             }
-            else if (activated)
+            else if (activated  && controller.isCrouching)
             {
-                PlayerController controller = other.GetComponent<PlayerController>();
-                if (controller.isCrouching)
-                {
                     this.Deactivate();
-                }
             }
                 }
         

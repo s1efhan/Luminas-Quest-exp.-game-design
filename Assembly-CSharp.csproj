@@ -64,15 +64,17 @@
     <Compile Include="Assets\_PROG\Scripts\replay.cs" />
     <Compile Include="Assets\_PROG\Scripts\EventManager.cs" />
     <Compile Include="Assets\_PROG\Scripts\BonbonCollector.cs" />
+    <Compile Include="Assets\_PROG\Scripts\MoveUp.cs" />
+    <Compile Include="Assets\mirrorlight.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerAudioController.cs" />
     <Compile Include="Assets\_PROG\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\_PROG\Scripts\WindradController.cs" />
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\_PROG\Scripts\buttonScript.cs" />
     <Compile Include="Assets\_PROG\Scripts\AttractParticles.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatorController.cs" />
-    <Compile Include="Assets\buttonScript.cs" />
     <Compile Include="Assets\_PROG\Scripts\FirefliesEffect.cs" />
     <Compile Include="Assets\_PROG\Scripts\LightPlate.cs" />
     <Compile Include="Assets\_PROG\Scripts\CylinderButton.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\_PROG\Scripts\BloomAnimator.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyController.cs" />
     <Compile Include="Assets\_PROG\Scripts\lever.cs" />
+    <Compile Include="Assets\_PROG\Scripts\FadeOut.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyParticleSystem.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
     <Compile Include="Assets\_PROG\Scripts\DoorController.cs" />
@@ -109,6 +112,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\_PROG\Materials\Mat\VerticalFlip.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\_PROG\Materials\Mat\NewSurfaceShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
