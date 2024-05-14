@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem part;
     public AudioClip fart;
     public bool isCrouching = false;
+    public bool isRunning = false;
 
 
     private CharacterController characterController;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!canMove) return;
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        isRunning = Input.GetKey(KeyCode.LeftShift);
         isCrouching = Input.GetKey(KeyCode.LeftControl);
         float speed = isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed);
 

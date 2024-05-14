@@ -5,19 +5,21 @@ public class AudioPlayerController : MonoBehaviour
     public AudioSource walkingAudioSource;
     public AudioSource runningAudioSource;
     public AudioSource sneakingAudioSource;
-    public AudioSource crouchingAudioSource;
-    public AudioSource jumpingAudioSource;
-    public AudioSource stopCrouchingAudioSource;
+    public AudioClip crouchingAudio;
+    public AudioClip jumpingAudio;
+    public AudioClip stopCrouchingAudio;
 
     private CharacterController characterController;
     private float timeSinceLastPlay = 0f;
-    private float delay = 0.3f;
+    private float delay = 0.1f;
     private bool wasCrouching = false;
     private bool wasGrounded = true;
+    private Camera cam;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        cam = GetComponentInChildren<Camera>();
     }
 
     void Update()
@@ -35,38 +37,48 @@ public class AudioPlayerController : MonoBehaviour
         {
             if (isSneaking)
             {
-                PlaySound(sneakingAudioSource);
+                if(!sneakingAudioSource.isPlaying)
+                {
+                    PlaySound(sneakingAudioSource);
+                }
             }
             else if (isRunning && isGrounded)
             {
-                PlaySound(runningAudioSource);
+                if (!runningAudioSource.isPlaying)
+                {
+                    PlaySound(runningAudioSource);
+                }
             }
             else if (isMoving && isGrounded)
             {
-                PlaySound(walkingAudioSource);
+                if(!walkingAudioSource.isPlaying)
+                {
+                    PlaySound(walkingAudioSource);
+                }
+            }
+            else
+            {
+                walkingAudioSource.Stop();
+                runningAudioSource.Stop();
+                sneakingAudioSource.Stop();
             }
 
             // Crouching sounds
             if (isCrouching && !wasCrouching)
             {
-                crouchingAudioSource.Play();
+                AudioSource.PlayClipAtPoint(crouchingAudio, cam.transform.position);
                 timeSinceLastPlay = 0f;
             }
             else if (!isCrouching && wasCrouching)
             {
-                stopCrouchingAudioSource.Play();
+                AudioSource.PlayClipAtPoint(stopCrouchingAudio, cam.transform.position);
                 timeSinceLastPlay = 0f;
             }
 
             // Jumping sounds
-            if (!isGrounded && wasGrounded)
+            if (Input.GetButtonDown("Jump"))
             {
-                jumpingAudioSource.Play();
-                timeSinceLastPlay = 0f;
-            }
-            else if (isGrounded && !wasGrounded)
-            {
-                jumpingAudioSource.Play();
+                AudioSource.PlayClipAtPoint(jumpingAudio, cam.transform.position, 60);
                 timeSinceLastPlay = 0f;
             }
         }
@@ -80,9 +92,6 @@ public class AudioPlayerController : MonoBehaviour
         walkingAudioSource.Stop();
         runningAudioSource.Stop();
         sneakingAudioSource.Stop();
-        crouchingAudioSource.Stop();
-        jumpingAudioSource.Stop();
-        stopCrouchingAudioSource.Stop();
 
         source.Play();
         timeSinceLastPlay = 0f;

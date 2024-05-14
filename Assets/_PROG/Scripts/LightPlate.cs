@@ -111,14 +111,16 @@ public class LightScript : MonoBehaviour
                     return;
                 }
 
-
-                Vector3 spawnPosition = this.transform.position;
-                spawnPosition.y -= 1; // Position 3 Einheiten unter dem Referenzobjekt
-                prefab.GetComponent<Renderer>().material = TrMap[newMaterial];
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
-
+               //Particle Animation
                 AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
                 particleSystem.Play();
+                if (controller.isRunning)
+                {
+                    Vector3 spawnPosition = this.transform.position;
+                    spawnPosition.y -= 1; // Position 3 Einheiten unter dem Referenzobjekt
+                    prefab.GetComponent<Renderer>().material = TrMap[newMaterial];
+                    Instantiate(prefab, spawnPosition, Quaternion.identity);
+                }
 
                 activated = true;
             }

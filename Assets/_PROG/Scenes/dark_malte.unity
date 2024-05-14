@@ -290,6 +290,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1219231202783659301, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: jumpingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: c04bed2396acfb848933ca218643f2d1, type: 3}
+    - target: {fileID: 1219231202783659301, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: crouchingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: dcd5986c5b2faed409be27b6b5aea200, type: 3}
+    - target: {fileID: 1219231202783659301, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: jumpingAudioSource
+      value: 
+      objectReference: {fileID: 8300000, guid: c04bed2396acfb848933ca218643f2d1, type: 3}
+    - target: {fileID: 1219231202783659301, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: stopCrouchingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: dcd5986c5b2faed409be27b6b5aea200, type: 3}
+    - target: {fileID: 1219231202783659301, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: stopCrouchingAudioSource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1429774689665154609, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: currentColor
       value: yellow
@@ -306,14 +326,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6397577165378939252, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13d1a59a410380644b5d3d358ed13e02, type: 3}
     - target: {fileID: 6527660559364017993, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: firefliesEffect
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6564880807802969589, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c04bed2396acfb848933ca218643f2d1, type: 3}
     - target: {fileID: 6689656994242563095, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8365328571826526741, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_Pitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365328571826526741, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13d1a59a410380644b5d3d358ed13e02, type: 3}
     - target: {fileID: 9107352408306751349, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -353,6 +389,26 @@ PrefabInstance:
     - target: {fileID: 9107352408306751349, guid: 0c68be531843c1b48a630191d6237431, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118278787561750617, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_Pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118278787561750617, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_Volume
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118278787561750617, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: be78c71081d1ecc45a9e3894b926f7c7, type: 3}
+    - target: {fileID: 9118278787561750617, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118278787561750617, guid: 0c68be531843c1b48a630191d6237431, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
