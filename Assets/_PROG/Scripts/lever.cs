@@ -46,6 +46,7 @@ public class Lever : MonoBehaviour
             leverAnimator.SetTrigger("Lever");
             AudioSource.PlayClipAtPoint(clip, playerCamera.transform.position, 0.2f);
             StartCoroutine(DelayedAction(0.5f));
+            GetComponentInChildren<ParticleSystem>().Play();
    
         }
     }

@@ -54,12 +54,29 @@ public class PlayerController : MonoBehaviour
         {
             movement = transform.TransformDirection(movement.normalized) * speed;
             animator.SetBool("walking", true);
+            /**if (Input.GetAxis("Vertical") !=0)
+            {
+                animator.SetInteger("horizontal", 0);
+                animator.SetBool("walking", true);
+            }
+            else {
+                animator.SetBool("walking", false);
+                if (Input.GetAxis("Horizontal") < 0)
+                {
+                    animator.SetInteger("horizontal", 1);
+                }
+                else if (Input.GetAxis("Horizontal") > 0)
+                {
+                    animator.SetInteger("horizontal", 2);
+                }
+            } */
             animator.SetBool("running", isRunning);
             animator.SetBool("crouching", isCrouching);
         }
         else
         {
             animator.SetBool("walking", false);
+            animator.SetInteger("horizontal", 0);
             animator.SetBool("running", false);
             animator.SetBool("crouching", isCrouching);
         }
@@ -85,6 +102,7 @@ public class PlayerController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
     }
 
     void HandleActions()

@@ -5263,6 +5263,8 @@ MonoBehaviour:
   color: 
   material: {fileID: 0}
   part: {fileID: 0}
+  clip: {fileID: 8300000, guid: 15f650c932f0cb04487548b206c2de71, type: 3}
+  oclip: {fileID: 8300000, guid: eeb40c82002604d4080b1810e3a3cd21, type: 3}
 --- !u!114 &8852462534752343098
 MonoBehaviour:
   m_ObjectHideFlags: 0
