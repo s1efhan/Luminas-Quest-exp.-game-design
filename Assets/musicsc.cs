@@ -10,7 +10,8 @@ public class musicsc : MonoBehaviour
     public AudioSource blue;
     public AudioSource green;
     private Dictionary<string, AudioSource> AudioSourceMap = new Dictionary<string, AudioSource>();
-    private string color = "yellow";
+    public string color = "yellow";
+    private string oldcolor = "yellow";
 
 
     private void Awake()
@@ -19,14 +20,14 @@ public class musicsc : MonoBehaviour
         AudioSourceMap.Add("blue", blue);
         AudioSourceMap.Add("red", red);
         AudioSourceMap.Add("green", green);
-        color = GetComponentInParent<PlayerController>().currentColor;
     }
     // Update is called once per frame
     void Update()
     {
-        if(GetComponentInParent<PlayerController>().currentColor != color) {
-            AudioSourceMap[color].Stop();
-            color = GetComponentInParent<PlayerController>().currentColor;
+        if(oldcolor != color)
+        {
+            AudioSourceMap[oldcolor].Stop();
+            oldcolor= color;
             AudioSourceMap[color].Play();
         }
     }

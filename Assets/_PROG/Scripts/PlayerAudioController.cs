@@ -44,7 +44,7 @@ public class AudioPlayerController : MonoBehaviour
                     PlaySound(sneakingAudioSource);
                 }
             }
-            else if (isRunning && isGrounded)
+            else if (isRunning && isGrounded && isMoving)
             {
                 if (!runningAudioSource.isPlaying)
                 {

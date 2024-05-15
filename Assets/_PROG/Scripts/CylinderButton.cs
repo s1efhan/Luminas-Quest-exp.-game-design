@@ -29,6 +29,9 @@ public class CylinderButton : MonoBehaviour
             part.GetComponent<ParticleSystemRenderer>().material = material;
             AudioSource.PlayClipAtPoint(clip, other.GetComponentInChildren<Camera>().transform.position);
         }
+        musicsc music = other.GetComponentInChildren<musicsc>();
+        music.color = color;
+
     }
     private void OnTriggerExit(Collider other)
     {
