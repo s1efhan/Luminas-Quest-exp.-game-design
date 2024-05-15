@@ -73,6 +73,7 @@
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerController.cs" />
     <Compile Include="Assets\_PROG\Scripts\buttonScript.cs" />
+    <Compile Include="Assets\musicsc.cs" />
     <Compile Include="Assets\_PROG\Scripts\AttractParticles.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FirefliesEffect.cs" />

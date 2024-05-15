@@ -14,6 +14,7 @@ public class AudioPlayerController : MonoBehaviour
     private float delay = 0.1f;
     private bool wasCrouching = false;
     private bool wasGrounded = true;
+    private bool wasHandstand = false;
     private Camera cam;
 
     void Start()
@@ -26,6 +27,7 @@ public class AudioPlayerController : MonoBehaviour
     {
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+        bool Handstand = Input.GetKeyDown(KeyCode.H);
         bool isMoving = characterController.velocity.magnitude > 0.1f;
         bool isSneaking = isMoving && isCrouching;
         bool isGrounded = characterController.isGrounded;
@@ -79,6 +81,18 @@ public class AudioPlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 AudioSource.PlayClipAtPoint(jumpingAudio, cam.transform.position, 60);
+                timeSinceLastPlay = 0f;
+            }
+
+            //HandStand Sound
+            if (Handstand && !wasHandstand)
+            {
+                AudioSource.PlayClipAtPoint(crouchingAudio, cam.transform.position);
+                timeSinceLastPlay = 0f;
+            }
+            else if (Handstand && wasHandstand)
+            {
+                AudioSource.PlayClipAtPoint(stopCrouchingAudio, cam.transform.position);
                 timeSinceLastPlay = 0f;
             }
         }
