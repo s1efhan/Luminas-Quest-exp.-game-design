@@ -8,6 +8,8 @@ TagManager:
   - door
   - Bonbon
   - Lever
+  - River
+  - Torch
   layers:
   - Default
   - TransparentFX

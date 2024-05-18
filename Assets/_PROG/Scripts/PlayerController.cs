@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip fart;
     public bool isCrouching = false;
     public bool isRunning = false;
-
+    public bool isSwimming = false;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -28,11 +28,16 @@ public class PlayerController : MonoBehaviour
     public string currentColor = "yellow";
     private bool handstand = false;
 
+    private GameObject[] torchObjRefs;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Finde alle Objekte mit dem Tag "Torch" und speichere sie im Array
+        torchObjRefs = GameObject.FindGameObjectsWithTag("Torch");
     }
 
     private void Update()
@@ -54,30 +59,16 @@ public class PlayerController : MonoBehaviour
         {
             movement = transform.TransformDirection(movement.normalized) * speed;
             animator.SetBool("walking", true);
-            /**if (Input.GetAxis("Vertical") !=0)
-            {
-                animator.SetInteger("horizontal", 0);
-                animator.SetBool("walking", true);
-            }
-            else {
-                animator.SetBool("walking", false);
-                if (Input.GetAxis("Horizontal") < 0)
-                {
-                    animator.SetInteger("horizontal", 1);
-                }
-                else if (Input.GetAxis("Horizontal") > 0)
-                {
-                    animator.SetInteger("horizontal", 2);
-                }
-            } */
             animator.SetBool("running", isRunning);
             animator.SetBool("crouching", isCrouching);
+            animator.SetBool("swimming", isSwimming);
         }
         else
         {
             animator.SetBool("walking", false);
             animator.SetInteger("horizontal", 0);
             animator.SetBool("running", false);
+            animator.SetBool("swimming", false);
             animator.SetBool("crouching", isCrouching);
         }
 
@@ -89,7 +80,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             animator.SetBool("handstand", handstand);
-            handstand = handstand ?  false :  true;
+            handstand = handstand ? false : true;
         }
 
         moveDirection.x = movement.x;
@@ -102,7 +93,45 @@ public class PlayerController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("River"))
+        {
+            isSwimming = true;
+            Debug.Log("Entered River");
+            animator.SetTrigger("swim");
+
+            // Deaktiviere alle Torch-Objekte
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(false);
+                    Debug.Log("Torch object deactivated: " + torchObjRefs[i].name);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("River"))
+        {
+            isSwimming = false;
+            Debug.Log("Exited River");
+
+            // Aktiviere alle zuvor deaktivierten Torch-Objekte wieder
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(true);
+                    Debug.Log("Torch object activated: " + torchObjRefs[i].name);
+                }
+            }
+        }
     }
 
     void HandleActions()
