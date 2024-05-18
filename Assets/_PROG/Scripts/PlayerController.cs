@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     void HandleMovement()
     {
         if (!canMove) return;
-
         isRunning = Input.GetKey(KeyCode.LeftShift);
         isCrouching = Input.GetKey(KeyCode.LeftControl);
         float speed = isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed);
@@ -61,14 +60,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("walking", true);
             animator.SetBool("running", isRunning);
             animator.SetBool("crouching", isCrouching);
-            animator.SetBool("swimming", isSwimming);
         }
         else
         {
             animator.SetBool("walking", false);
             animator.SetInteger("horizontal", 0);
             animator.SetBool("running", false);
-            animator.SetBool("swimming", false);
             animator.SetBool("crouching", isCrouching);
         }
 
@@ -95,45 +92,6 @@ public class PlayerController : MonoBehaviour
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("River"))
-        {
-            isSwimming = true;
-            Debug.Log("Entered River");
-            animator.SetTrigger("swim");
-
-            // Deaktiviere alle Torch-Objekte
-            for (int i = 0; i < torchObjRefs.Length; i++)
-            {
-                if (torchObjRefs[i] != null)
-                {
-                    torchObjRefs[i].SetActive(false);
-                    Debug.Log("Torch object deactivated: " + torchObjRefs[i].name);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("River"))
-        {
-            isSwimming = false;
-            Debug.Log("Exited River");
-
-            // Aktiviere alle zuvor deaktivierten Torch-Objekte wieder
-            for (int i = 0; i < torchObjRefs.Length; i++)
-            {
-                if (torchObjRefs[i] != null)
-                {
-                    torchObjRefs[i].SetActive(true);
-                    Debug.Log("Torch object activated: " + torchObjRefs[i].name);
-                }
-            }
-        }
-    }
-
     void HandleActions()
     {
         timeSinceLastPlay += Time.deltaTime;
@@ -142,6 +100,43 @@ public class PlayerController : MonoBehaviour
             part.Play();
             timeSinceLastPlay = 0f;
             AudioSource.PlayClipAtPoint(fart, playerCamera.transform.position);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("River"))
+        {
+            // Deaktiviere alle Torch-Objekte
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(false);
+                
+                }
+            }
+            isSwimming = true;
+        
+            animator.SetTrigger("swim");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("River"))
+        {
+            // Aktiviere alle zuvor deaktivierten Torch-Objekte wieder
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(true);
+                
+                }
+            }
+            isSwimming = false;
+            animator.ResetTrigger("swim"); // Setze den Trigger-Parameter "swim" zurück
         }
     }
 }
