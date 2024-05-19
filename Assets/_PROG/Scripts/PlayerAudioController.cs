@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class AudioPlayerController : MonoBehaviour
 {
+    public PlayerController playerController;
+
     public AudioSource walkingAudioSource;
     public AudioSource runningAudioSource;
+    public AudioSource swimmingAudioSource;
     public AudioSource sneakingAudioSource;
+
     public AudioClip crouchingAudio;
     public AudioClip jumpingAudio;
     public AudioClip stopCrouchingAudio;
@@ -31,16 +35,25 @@ public class AudioPlayerController : MonoBehaviour
         bool isMoving = characterController.velocity.magnitude > 0.1f;
         bool isSneaking = isMoving && isCrouching;
         bool isGrounded = characterController.isGrounded;
+        bool isSwimming = playerController.isSwimming;
 
         timeSinceLastPlay += Time.deltaTime;
 
-        // Handle sounds based on movement and actions
         if (timeSinceLastPlay >= delay)
         {
-            if (isSneaking)
+            if (isSwimming)
             {
-                if(!sneakingAudioSource.isPlaying)
+                if (!swimmingAudioSource.isPlaying)
                 {
+                    StopAllAudioSources();
+                    PlaySound(swimmingAudioSource);
+                }
+            }
+            else if (isSneaking)
+            {
+                if (!sneakingAudioSource.isPlaying)
+                {
+                    StopAllAudioSources();
                     PlaySound(sneakingAudioSource);
                 }
             }
@@ -48,21 +61,21 @@ public class AudioPlayerController : MonoBehaviour
             {
                 if (!runningAudioSource.isPlaying)
                 {
+                    StopAllAudioSources();
                     PlaySound(runningAudioSource);
                 }
             }
             else if (isMoving && isGrounded)
             {
-                if(!walkingAudioSource.isPlaying)
+                if (!walkingAudioSource.isPlaying)
                 {
+                    StopAllAudioSources();
                     PlaySound(walkingAudioSource);
                 }
             }
             else
             {
-                walkingAudioSource.Stop();
-                runningAudioSource.Stop();
-                sneakingAudioSource.Stop();
+                StopAllAudioSources();
             }
 
             // Crouching sounds
@@ -103,11 +116,15 @@ public class AudioPlayerController : MonoBehaviour
 
     void PlaySound(AudioSource source)
     {
+        source.Play();
+        timeSinceLastPlay = 0f;
+    }
+
+    void StopAllAudioSources()
+    {
         walkingAudioSource.Stop();
         runningAudioSource.Stop();
         sneakingAudioSource.Stop();
-
-        source.Play();
-        timeSinceLastPlay = 0f;
+        swimmingAudioSource.Stop();
     }
 }
