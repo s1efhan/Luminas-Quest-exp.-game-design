@@ -19,13 +19,13 @@ public class CharacterAnimationController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         // Determine if the character should be jogging based on the input
-        bool isJogging = verticalInput > 0;
+        bool Jogging = verticalInput > 0;
 
         // Update the Animator parameter
-        animator.SetBool("IsJogging", isJogging);
+        animator.SetBool("Jogging", Jogging);
 
         // Move the character forward if jogging
-        if (isJogging)
+        if (Jogging)
         {
             Vector3 forwardMovement = transform.forward * speed * Time.deltaTime;
             transform.Translate(forwardMovement);
