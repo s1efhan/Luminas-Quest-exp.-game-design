@@ -42,10 +42,22 @@ public class PlayerControll : MonoBehaviour
         Vector3 forward = transform.forward;
         Vector3 right = transform.right;
         Vector3 movement = (forward * Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"));
-        moveDirection = movement.normalized * speed;
 
-        // Bewegung anwenden
-        moveDirection.y -= gravity * Time.deltaTime;
+        // Only update the horizontal components of moveDirection
+        moveDirection.x = movement.normalized.x * speed;
+        moveDirection.z = movement.normalized.z * speed;
+
+        // Apply gravity
+        if (characterController.isGrounded)
+        {
+            moveDirection.y = 0f;
+        }
+        else
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        // Apply movement
         characterController.Move(moveDirection * Time.deltaTime);
 
         // Kamera- und Charakterrotation

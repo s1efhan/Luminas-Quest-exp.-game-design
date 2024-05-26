@@ -72,12 +72,12 @@
     <Compile Include="Assets\_PROG\Scripts\AnimatedTexture.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
-    <Compile Include="Assets\_PROG\Lumina\CharacterAnimationController.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\CharacterAnimController.cs" />
+    <Compile Include="Assets\_PROG\Scripts\CharacterAnimationController.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
+    <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\BloomAnimator.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeOut.cs" />
     <Compile Include="Assets\_PROG\Scripts\Collect.cs" />

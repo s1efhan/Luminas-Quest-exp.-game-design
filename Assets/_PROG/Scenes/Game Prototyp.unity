@@ -2004,6 +2004,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2357500359882502147, guid: 2cdef6ce537ad6a42a28a220db9299ec, type: 3}
+      propertyPath: volumeLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3266039511913223804, guid: 2cdef6ce537ad6a42a28a220db9299ec, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -2060,6 +2064,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3266039511913223804, guid: 2cdef6ce537ad6a42a28a220db9299ec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1564297724}
+    - targetCorrespondingSourceObject: {fileID: 3266039511913223804, guid: 2cdef6ce537ad6a42a28a220db9299ec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564297728}
   m_SourcePrefab: {fileID: 100100000, guid: 2cdef6ce537ad6a42a28a220db9299ec, type: 3}
 --- !u!1 &915684314
 GameObject:
@@ -3218,6 +3225,29 @@ MonoBehaviour:
   lookSpeed: 2.5
   lookXLimit: 45
   rotationSpeed: 100
+--- !u!136 &1564297728
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564297723}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1578250042
 GameObject:
   m_ObjectHideFlags: 0
