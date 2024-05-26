@@ -73,6 +73,7 @@
     <Compile Include="Assets/mirrorlight.cs" />
     <Compile Include="Assets/_PROG/Scripts/PlayerAudioController.cs" />
     <Compile Include="Assets/_PROG/Scripts/TriggerDoorController.cs" />
+    <Compile Include="Assets/_PROG/Scripts/AnimatedTexture.cs" />
     <Compile Include="Assets/BrokenVector/LowPolyDungeon/Demo Scenes/MouseCamLook.cs" />
     <Compile Include="Assets/_PROG/Scripts/WindradController.cs" />
     <Compile Include="Assets/_PROG/Scripts/ScoreManager.cs" />

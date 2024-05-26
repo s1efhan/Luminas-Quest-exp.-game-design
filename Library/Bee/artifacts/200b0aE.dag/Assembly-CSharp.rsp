@@ -369,6 +369,7 @@
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/ShootingScript.cs"
 "Assets/Shootingscript2.cs"
+"Assets/_PROG/Scripts/AnimatedTexture.cs"
 "Assets/_PROG/Scripts/AnimatorController.cs"
 "Assets/_PROG/Scripts/AttractParticles.cs"
 "Assets/_PROG/Scripts/BloomAnimator.cs"
