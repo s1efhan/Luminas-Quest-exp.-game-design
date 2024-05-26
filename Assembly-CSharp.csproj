@@ -74,6 +74,7 @@
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\_PROG\Lumina\CharacterAnimationController.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatorController.cs" />
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\_PROG\Scripts\FadeOut.cs" />
     <Compile Include="Assets\_PROG\Scripts\Collect.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
+    <Compile Include="Assets\_PROG\Scripts\PlayerContoll.cs" />
     <Compile Include="Assets\_PROG\Scripts\DoorController.cs" />
   </ItemGroup>
   <ItemGroup>

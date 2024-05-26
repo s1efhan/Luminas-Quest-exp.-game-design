@@ -5,7 +5,6 @@ public class ReplayController : MonoBehaviour
 {
     public GameObject playerPrefab;
     public float recordTime = 30f;
-    public FirefliesEffect firefliesEffect; // Reference to FirefliesEffect
     private Queue<(Vector3, Quaternion, float)> movements = new Queue<(Vector3, Quaternion, float)>();
     private GameObject replayInstance;
     private float timer;
@@ -58,7 +57,7 @@ public class ReplayController : MonoBehaviour
         }
 
         Destroy(replayInstance);
-        firefliesEffect.DeactivateParticles(); // Stop fireflies effect
+       
         replayInstance = null;
     }
 
@@ -70,7 +69,7 @@ public class ReplayController : MonoBehaviour
             replayInstance = Instantiate(playerPrefab, startPosition, startRotation);
 
             // Activate the fireflies effect
-            firefliesEffect.ActivateParticles(replayInstance.transform);
+          
 
             StartCoroutine(ReplayMovement());
         }
