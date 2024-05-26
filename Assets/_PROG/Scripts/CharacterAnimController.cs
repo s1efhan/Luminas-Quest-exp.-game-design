@@ -7,6 +7,7 @@ public class CharacterAnimController : MonoBehaviour
     private Animator animator;
     public bool Swimming = false;
     public bool Jogging = false;
+    public bool Running = false;
     void Start()
     {
         // Get the Animator component attached to the character
@@ -20,7 +21,7 @@ public class CharacterAnimController : MonoBehaviour
 
         // Determine if the character should be jogging based on the input
         Jogging = verticalInput > 0;
-        bool Running = Input.GetKey(KeyCode.LeftShift);
+        Running = Input.GetKey(KeyCode.LeftShift);
 
         animator.SetBool("isRunning", Running);
         animator.SetBool("isJogging", Jogging);

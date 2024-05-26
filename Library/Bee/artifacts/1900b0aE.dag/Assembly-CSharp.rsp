@@ -367,6 +367,7 @@
 "Assets/_PROG/Scripts/CameraControl.cs"
 "Assets/_PROG/Scripts/CharacterAnimationController.cs"
 "Assets/_PROG/Scripts/CharacterAnimController.cs"
+"Assets/_PROG/Scripts/CharacterAudio.cs"
 "Assets/_PROG/Scripts/coin_rotation.cs"
 "Assets/_PROG/Scripts/Collect.cs"
 "Assets/_PROG/Scripts/DoorController.cs"
