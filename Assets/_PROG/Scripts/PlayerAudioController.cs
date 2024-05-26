@@ -3,15 +3,14 @@ using UnityEngine;
 public class AudioPlayerController : MonoBehaviour
 {
     public PlayerController playerController;
-
     public AudioSource walkingAudioSource;
     public AudioSource runningAudioSource;
     public AudioSource swimmingAudioSource;
     public AudioSource sneakingAudioSource;
-
     public AudioClip crouchingAudio;
     public AudioClip jumpingAudio;
     public AudioClip stopCrouchingAudio;
+    public AudioClip WaterSplash;
 
     private CharacterController characterController;
     private float timeSinceLastPlay = 0f;
@@ -29,9 +28,9 @@ public class AudioPlayerController : MonoBehaviour
 
     void Update()
     {
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        bool isCrouching = Input.GetKey(KeyCode.LeftControl);
+        bool isRunning = playerController.isRunning;
         bool Handstand = Input.GetKeyDown(KeyCode.H);
+        bool isCrouching = playerController.isCrouching;
         bool isMoving = characterController.velocity.magnitude > 0.1f;
         bool isSneaking = isMoving && isCrouching;
         bool isGrounded = characterController.isGrounded;
@@ -126,5 +125,14 @@ public class AudioPlayerController : MonoBehaviour
         runningAudioSource.Stop();
         sneakingAudioSource.Stop();
         swimmingAudioSource.Stop();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("River"))
+        {
+            // Spiele WaterSplash-Audio ab
+            AudioSource.PlayClipAtPoint(WaterSplash, cam.transform.position);
+        }
     }
 }

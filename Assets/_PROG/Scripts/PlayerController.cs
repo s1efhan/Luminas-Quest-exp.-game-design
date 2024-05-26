@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     public ScoreManager scoreManager;
     public float walkingSpeed = 8.0f;
     public float runningSpeed = 12.0f;
-    public float crouchSpeed = 4.0f;
+    public float crouchSpeed = 4.0f; // Crouching wieder hinzugefügt
     public float jumpSpeed = 8.0f;
     public float gravity = 15.0f;
     public Camera playerCamera;
@@ -15,9 +15,15 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public ParticleSystem part;
     public AudioClip fart;
-    public bool isCrouching = false;
+
+    public bool isMoving = false;
+    public bool isCrouching = false; // Crouching wieder hinzugefügt
     public bool isRunning = false;
     public bool isSwimming = false;
+    public bool isWalking = false;
+    public bool isJumping = false;
+    public bool isStanding = true; // Default ist true
+    public bool ground = true;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -46,20 +52,59 @@ public class PlayerController : MonoBehaviour
         HandleActions();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("River"))
+        {
+            // Deaktiviere alle Torch-Objekte
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(false);
+                }
+            }
+            isSwimming = true;
+            animator.SetTrigger("swim");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("River"))
+        {
+            // Aktiviere alle zuvor deaktivierten Torch-Objekte wieder
+            for (int i = 0; i < torchObjRefs.Length; i++)
+            {
+                if (torchObjRefs[i] != null)
+                {
+                    torchObjRefs[i].SetActive(true);
+                }
+            }
+            isSwimming = false;
+            animator.ResetTrigger("swim"); // Setze den Trigger-Parameter "swim" zurück
+        }
+    }
+
     void HandleMovement()
     {
         if (!canMove) return;
-        isRunning = Input.GetKey(KeyCode.LeftShift);
-        isCrouching = Input.GetKey(KeyCode.LeftControl);
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        isMoving = moveHorizontal != 0 || moveVertical != 0;
+        isWalking = isMoving && !isRunning && !isJumping && !isSwimming;
+        isRunning = isMoving && Input.GetKey(KeyCode.LeftShift) && !isJumping && !isSwimming;
+        isStanding = !isMoving && !isRunning && !isWalking && !isSwimming; 
+
         float speed = isRunning ? runningSpeed : (isCrouching ? crouchSpeed : walkingSpeed);
 
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if (movement != Vector3.zero)
         {
             movement = transform.TransformDirection(movement.normalized) * speed;
-            animator.SetBool("walking", true);
+            animator.SetBool("walking", isWalking);
             animator.SetBool("running", isRunning);
-            animator.SetBool("crouching", isCrouching);
+            animator.SetBool("crouching", isCrouching); 
         }
         else
         {
@@ -68,7 +113,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("running", false);
             animator.SetBool("crouching", isCrouching);
         }
+        if (characterController.isGrounded)
+        {
+            isJumping = false;
 
+        }
+        else { isJumping = true; }
         if (Input.GetButtonDown("Jump") && characterController.isGrounded)
         {
             animator.SetTrigger("jump");
@@ -100,43 +150,6 @@ public class PlayerController : MonoBehaviour
             part.Play();
             timeSinceLastPlay = 0f;
             AudioSource.PlayClipAtPoint(fart, playerCamera.transform.position);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("River"))
-        {
-            // Deaktiviere alle Torch-Objekte
-            for (int i = 0; i < torchObjRefs.Length; i++)
-            {
-                if (torchObjRefs[i] != null)
-                {
-                    torchObjRefs[i].SetActive(false);
-                
-                }
-            }
-            isSwimming = true;
-        
-            animator.SetTrigger("swim");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("River"))
-        {
-            // Aktiviere alle zuvor deaktivierten Torch-Objekte wieder
-            for (int i = 0; i < torchObjRefs.Length; i++)
-            {
-                if (torchObjRefs[i] != null)
-                {
-                    torchObjRefs[i].SetActive(true);
-                
-                }
-            }
-            isSwimming = false;
-            animator.ResetTrigger("swim"); // Setze den Trigger-Parameter "swim" zurück
         }
     }
 }
