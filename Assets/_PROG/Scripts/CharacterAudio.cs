@@ -8,7 +8,7 @@ public class CharacterAudio : MonoBehaviour
     public AudioSource swimmingAudioSource;
     public AudioClip WaterSplash;
 
-    private CharacterController characterController;
+    public CharacterController characterController;
     private float timeSinceLastPlay = 0f;
     private float delay = 0.1f;
     private bool wasCrouching = false;
@@ -18,7 +18,6 @@ public class CharacterAudio : MonoBehaviour
 
     void Start()
     {
-        playerController = GetComponent<CharacterAnimController>();
         cam = GetComponentInChildren<Camera>();
     }
 
