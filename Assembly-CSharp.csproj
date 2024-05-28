@@ -78,7 +78,6 @@
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
-    <Compile Include="Assets\CombinedMesh.cs" />
     <Compile Include="Assets\_PROG\Scripts\BloomAnimator.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAudio.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeOut.cs" />
