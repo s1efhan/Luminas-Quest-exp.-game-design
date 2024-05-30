@@ -27,6 +27,12 @@ public class PlayerControll : MonoBehaviour
     public float rotationSpeed = 100.0f;
     private float rotationX = 0;
 
+    private bool isRecording = true;
+    private List<Vector3> recordedPositions = new List<Vector3>();
+    private float recordDuration = 30.0f;
+    private float recordTimer = 0.0f;
+    public GameObject prefabToSpawn;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -40,7 +46,9 @@ public class PlayerControll : MonoBehaviour
     void Update()
     {
         HandleMovement();
-   RaycastHit hit;
+        HandleInteraction();
+        RecordPlayerActions();
+        RaycastHit hit;
     if (Physics.Raycast(transform.position + Vector3.up * characterController.radius, Vector3.down, out hit, characterController.height * 0.6f + characterController.radius))
     {
         Vector3 surfaceNormal = hit.normal;
@@ -127,6 +135,46 @@ public class PlayerControll : MonoBehaviour
         if (isGrounded && !Input.GetButtonDown("Jump"))
         {
             isJumping = false;
+        }
+    }
+    void HandleInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Hier könnte deine allgemeine Interaktionslogik stehen
+            Debug.Log("Interacted!");
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            CreatePrefabFromRecording();
+        }
+    }
+
+    void RecordPlayerActions()
+    {
+        if (isRecording)
+        {
+            recordTimer += Time.deltaTime;
+
+            // Record position every frame during recording
+            recordedPositions.Add(transform.position);
+
+            if (recordTimer >= recordDuration)
+            {
+                isRecording = false; // Stop recording after the specified duration
+            }
+        }
+    }
+
+    void CreatePrefabFromRecording()
+    {
+        GameObject prefab = Instantiate(prefabToSpawn, recordedPositions[0], Quaternion.identity);
+        PrefabRecorder prefabRecorder = prefab.GetComponent<PrefabRecorder>();
+        if (prefabRecorder != null)
+        {
+            prefabRecorder.RecordedPositions = recordedPositions;
+            prefabRecorder.ReplayRecordedActions();
         }
     }
 }
