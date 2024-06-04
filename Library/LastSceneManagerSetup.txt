@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_PROG/Scenes/Malte kopie.unity
+- path: Assets/_PROG/Scenes/Malte_KOKOPie.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
