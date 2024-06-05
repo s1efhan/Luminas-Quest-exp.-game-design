@@ -1,16 +1,3 @@
-using System;
-using UnityEngine;
-
-namespace UnityStandardAssets.ImageEffects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Color Adjustments/Sepia Tone")]
-    public class SepiaTone : ImageEffectBase
-	{
-        // Called by camera to apply image effect
-        void OnRenderImage (RenderTexture source, RenderTexture destination)
-		{
-            Graphics.Blit (source, destination, material);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c4693b95734e68d097d10d6cf71dc745708e9b21c7ad838bb873dfd5bc55fe68
+size 444

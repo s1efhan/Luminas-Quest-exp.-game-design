@@ -1,21 +1,3 @@
-using System;
-using UnityEngine;
-
-namespace UnityStandardAssets.ImageEffects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Color Adjustments/Grayscale")]
-    public class Grayscale : ImageEffectBase {
-        public Texture  textureRamp;
-
-        [Range(-1.0f,1.0f)]
-        public float    rampOffset;
-
-        // Called by camera to apply image effect
-        void OnRenderImage (RenderTexture source, RenderTexture destination) {
-            material.SetTexture("_RampTex", textureRamp);
-            material.SetFloat("_RampOffset", rampOffset);
-            Graphics.Blit (source, destination, material);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:76ac3621b1951f02e91b666aec2e78fefc2a63dd01202c71c93482ce40791b91
+size 664

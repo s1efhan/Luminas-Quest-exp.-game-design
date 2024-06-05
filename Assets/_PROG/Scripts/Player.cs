@@ -1,26 +1,3 @@
-using UnityEngine;
-
-public class movement : MonoBehaviour
-{
-    public float speed = 20f;
-
-    void Update()
-    {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        Rigidbody myRigidbody = gameObject.GetComponent<Rigidbody>();
-
-        // Erzeuge einen Bewegungsvektor basierend auf Eingaben
-        Vector3 movement = new Vector3(h, 0f, v);
-
-        // Transformiere den Bewegungsvektor relativ zur Kamera
-        Vector3 cameraRelativeMovement = Camera.main.transform.TransformDirection(movement);
-
-        // Bewege das Rigidbody ohne die y-Komponente zu berücksichtigen, um Höhenänderungen zu vermeiden
-        cameraRelativeMovement.y = 0;
-
-        // Wende die Bewegung an
-        myRigidbody.AddForce(cameraRelativeMovement * speed);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:266f9c6a29e54e16f2e31cdd88d9bc2b1113baa5ab42f184b167ddd8fb6d2da8
+size 827

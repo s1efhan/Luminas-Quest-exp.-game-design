@@ -1,26 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AnimatedTexture : MonoBehaviour
-{
-    public float SpeedX;
-    public float SpeedY;
-    private float CurrX;
-    private float CurrY;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        CurrX = GetComponent<Renderer>().material.mainTextureOffset.x;
-        CurrY = GetComponent<Renderer>().material.mainTextureOffset.y;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CurrX += Time.deltaTime * SpeedX;
-        CurrY += Time.deltaTime * SpeedY;
-        GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(CurrX, CurrY));
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7548625996527b0cfa79eb733d159217f7c38146707eeb49cad0e31eca9b7ba0
+size 733

@@ -1,21 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class NewBehaviourScript2 : MonoBehaviour
-{
-    public GameObject Player;
-    private Vector3 offset;
-    
-    private void Start()
-    {
-        offset = transform.position - Player.transform.position;
-    }
-
-    // Update is called once per frame
-    void LateUpdate()
-    {
-        transform.position = Player.transform.position + offset;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:59ff44781631a15aab5bfe0581202d97b56c28bfd857e380ab6101318da83bd7
+size 472

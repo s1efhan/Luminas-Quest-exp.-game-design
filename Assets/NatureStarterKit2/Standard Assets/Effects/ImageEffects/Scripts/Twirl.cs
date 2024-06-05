@@ -1,22 +1,3 @@
-using System;
-using UnityEngine;
-
-namespace UnityStandardAssets.ImageEffects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Displacement/Twirl")]
-    public class Twirl : ImageEffectBase
-    {
-        public Vector2 radius = new Vector2(0.3F,0.3F);
-        [Range(0.0f,360.0f)]
-        public float angle = 50;
-        public Vector2 center = new Vector2 (0.5F, 0.5F);
-
-
-        // Called by camera to apply image effect
-        void OnRenderImage (RenderTexture source, RenderTexture destination)
-        {
-            ImageEffects.RenderDistortion (material, source, destination, angle, center, radius);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ee36d29e1855c2c91a04473097b2021b1ea984ce8c3a1c145ccdd1766b3c0014
+size 662

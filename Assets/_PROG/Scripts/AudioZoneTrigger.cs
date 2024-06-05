@@ -1,25 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AudioZoneTrigger : MonoBehaviour
-{
-    public AudioSource audioSource;
-    public string targetTag = "Player";
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(targetTag))
-        {
-            audioSource.Play();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(targetTag))
-        {
-            audioSource.Stop();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ece3a12f9776ca2c21e0c06de3601143c2edd12dbc9419bc7072c5b6c35483e3
+size 538

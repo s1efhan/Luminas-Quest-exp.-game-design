@@ -1,20 +1,3 @@
-using System;
-using UnityEngine;
-
-namespace UnityStandardAssets.ImageEffects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Displacement/Vortex")]
-    public class Vortex : ImageEffectBase
-    {
-        public Vector2 radius = new Vector2(0.4F,0.4F);
-        public float angle = 50;
-        public Vector2 center = new Vector2(0.5F, 0.5F);
-		
-        // Called by camera to apply image effect
-        void OnRenderImage (RenderTexture source, RenderTexture destination)
-        {
-            ImageEffects.RenderDistortion (material, source, destination, angle, center, radius);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2686bbfdf98cb0a91cc1f6a16aa0c9540d305a5e0b8eeaa6f87bfc176b635dd9
+size 633

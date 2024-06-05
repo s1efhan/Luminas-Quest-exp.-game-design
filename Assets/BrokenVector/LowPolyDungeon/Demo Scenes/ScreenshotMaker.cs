@@ -1,31 +1,3 @@
-using System.IO;
-using UnityEngine;
-
-#if UNITY_EDITOR
-[ExecuteInEditMode]
-public class ScreenshotMaker : MonoBehaviour
-{
-    void Update()
-    {
-        if (Input.GetButtonDown("Submit"))
-        {
-            var dir = Directory.GetParent((Application.dataPath)).ToString();
-            int counter = 0;
-            while (true)
-            {
-                var path = Path.Combine(dir, $"Screenshot_{counter}.png");
-                if (File.Exists(path))
-                {
-                    counter++;
-                }
-                else
-                {
-                    ScreenCapture.CaptureScreenshot(path);
-                    print($"Saved screenshot to {path}");
-                    return;
-                }
-            }
-        }
-    }
-}
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:d2b2b54c414fae197e43749d452d19ad613ed909c9ae176b55495b11715a9652
+size 795

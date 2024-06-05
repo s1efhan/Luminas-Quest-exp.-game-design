@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6308018514725692719}
   - component: {fileID: 4231564089079302158}
-  - component: {fileID: 5684656424850515040}
   - component: {fileID: 2151074492202575413}
   - component: {fileID: 4627154168170999857}
   - component: {fileID: 1039454397931994994}
   - component: {fileID: 8292486682758676376}
   - component: {fileID: 4569845003668549345}
   - component: {fileID: 5738993673783518725}
+  - component: {fileID: 2922190927837340732}
+  - component: {fileID: 6489977076286453030}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -67,26 +68,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &5684656424850515040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3266039511913223804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0867b2b3b2473494eb353da268d69ce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSpeed: 4
-  runningSpeed: 8
-  isRunning: 0
-  gravity: 15
-  lookSpeed: 2.5
-  lookXLimit: 45
-  rotationSpeed: 100
+  m_Center: {x: 0, y: 1.02, z: 0}
 --- !u!114 &2151074492202575413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +76,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3266039511913223804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dcb8bb186cd81e4e814d0cc6eccd768, type: 3}
   m_Name: 
@@ -132,12 +114,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3266039511913223804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 459dbb718a5e50046b47186cecc47463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 2151074492202575413}
+  playerController: {fileID: 0}
   walkingAudioSource: {fileID: 8292486682758676376}
   runningAudioSource: {fileID: 4569845003668549345}
   swimmingAudioSource: {fileID: 5738993673783518725}
@@ -431,6 +413,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2922190927837340732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266039511913223804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fb0fcee55bd84a9fae3a5055f9d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 7976786360810662067, guid: 687a94251b1b6194cb7347599637dde2, type: 3}
+  recordTime: 5
+--- !u!114 &6489977076286453030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266039511913223804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a392a7ed2347c6f488ae4919acb59c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingSpeed: 8
+  runningSpeed: 12
+  jumpSpeed: 8
+  gravity: 15
+  playerCamera: {fileID: 5115770365309999082}
+  lookSpeed: 2.5
+  lookXLimit: 45
+  isMoving: 0
+  isRunning: 0
+  isSwimming: 0
+  isWalking: 0
+  isGrounded: 0
+  isJumping: 0
+  isStanding: 1
+  canMove: 1
 --- !u!1 &7326182787594589363
 GameObject:
   m_ObjectHideFlags: 0
