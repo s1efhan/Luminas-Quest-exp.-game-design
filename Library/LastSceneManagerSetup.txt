@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_PROG/Scenes/Zakiyahs Scene.unity
+- path: Assets/_PROG/Scenes/aktuelles Game (Maltes Kokopie).unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
