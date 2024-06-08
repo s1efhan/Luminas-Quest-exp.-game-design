@@ -618,6 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218598535180834069}
   - component: {fileID: 1563217183606027318}
+  - component: {fileID: 5569498654949334364}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -656,7 +657,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lampLight: {fileID: 3613360510096940158}
   flameParticleSystem: {fileID: 7584157536661335245}
-  fadeDuration: 20
+  fadeDuration: 50
+  initialIntensity: 0
+  initialEmissionRate: 0
+  initialStartSize: 0
+--- !u!65 &5569498654949334364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264245547740746636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8, y: 1, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7326182787594589363
 GameObject:
   m_ObjectHideFlags: 0

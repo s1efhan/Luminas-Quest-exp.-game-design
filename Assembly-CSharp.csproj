@@ -78,6 +78,7 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\GlobalFog.cs" />
     <Compile Include="Assets\_PROG\Scripts\CameraControl.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
+    <Compile Include="Assets\_PROG\Scripts\replay_1.cs" />
     <Compile Include="Assets\_PROG\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\CombineMeshes.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerAudioController.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\_PROG\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatedTexture.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
+    <Compile Include="Assets\_PROG\Scripts\Tunnel_activate.cs" />
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerController.cs" />
@@ -94,21 +96,19 @@
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimationController.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
     <Compile Include="Assets\_PROG\Scripts\CollectableFirefly.cs" />
+    <Compile Include="Assets\_PROG\Scripts\Prefabrecorder.cs" />
     <Compile Include="Assets\_PROG\Scripts\AudioZoneTrigger.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatorController.cs" />
-    <Compile Include="Assets\Prefabrecorder.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
-    <Compile Include="Assets\replay_1.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
-    <Compile Include="Assets\playerconti.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeManager.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
@@ -129,6 +129,7 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerContoll.cs" />
+    <Compile Include="Assets\_PROG\Scripts\playerconti.cs" />
     <Compile Include="Assets\_PROG\Scripts\LampLightController.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
