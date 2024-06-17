@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0.54844505
+      value: 2.5861063e+17
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1610197626898993272, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -115,18 +115,18 @@ PrefabInstance:
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: ShapeModule.m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: 711f1defe61565345af47cd2984b6781, type: 3}
+      objectReference: {fileID: 4300040, guid: b6ef2f4d0154b2747860a3332fa05f97, type: 3}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: NoiseModule.frequency
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: ShapeModule.placementMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: NoiseModule.strength.scalar
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1928036275083608079, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -150,15 +150,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366918867722705185, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.55
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4366918867722705185, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.55
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4366918867722705185, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.55
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4366918867722705185, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalRotation.w
