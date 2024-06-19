@@ -894,9 +894,6 @@
     <Reference Include="Unity.Burst">
       <HintPath>C:\Users\Hussein\Desktop\H_B_oemer\experimental-game-design1\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\Hussein\Desktop\H_B_oemer\experimental-game-design1\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Users\Hussein\Desktop\H_B_oemer\experimental-game-design1\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
