@@ -80,6 +80,7 @@
     <Compile Include="Assets\_PROG\Scripts\CameraControl.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
     <Compile Include="Assets\_PROG\Scripts\replay_1.cs" />
+    <Compile Include="Assets\Pausemenü.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorLinear.cs" />
     <Compile Include="Assets\_PROG\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Navscript.cs" />
