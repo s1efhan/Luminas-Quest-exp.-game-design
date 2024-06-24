@@ -80,17 +80,14 @@
     <Compile Include="Assets\_PROG\Scripts\CameraControl.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
     <Compile Include="Assets\_PROG\Scripts\replay_1.cs" />
-    <Compile Include="Assets\Pausemenü.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorLinear.cs" />
     <Compile Include="Assets\_PROG\Scripts\ChangeScene.cs" />
-    <Compile Include="Assets\Navscript.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerAudioController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyCounter.cs" />
     <Compile Include="Assets\_PROG\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\_PROG\Scripts\AnimatedTexture.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\MouseCamLook.cs" />
     <Compile Include="Assets\_PROG\Scripts\Tunnel_activate.cs" />
-    <Compile Include="Assets\ParticleAttractor.cs" />
     <Compile Include="Assets\_PROG\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\_PROG\Scripts\ResetPosition.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
@@ -112,12 +109,12 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly_Demos\Environment_Free\Helpers\MouseLook.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSelf.cs" />
+    <Compile Include="Assets\_PROG\Scripts\Pausemenü.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
     <Compile Include="Assets\_PROG\Scripts\FireflyBuddie.cs" />
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\monster.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeManager.cs" />
@@ -139,11 +136,14 @@
     <Compile Include="Assets\_PROG\Scripts\JumpBoostManager.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\PlayerMovement.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+    <Compile Include="Assets\_PROG\Scripts\lampbroke.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
+    <Compile Include="Assets\_PROG\Scripts\ParticleAttractor.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
     <Compile Include="Assets\_PROG\Scripts\PlayerContoll.cs" />
+    <Compile Include="Assets\_PROG\Scripts\Navscript.cs" />
     <Compile Include="Assets\_PROG\Scripts\playerconti.cs" />
     <Compile Include="Assets\_PROG\Scripts\LampLightController.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
@@ -198,7 +198,6 @@
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
-    <None Include="Assets\Trees_WorldSpace_FREE\Shaders\HDRP\HDRP_TreeLeafSwitcher.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -271,7 +270,6 @@
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Trees_WorldSpace_FREE\Shaders\HDRP\HDRP_BarkSwitch.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
