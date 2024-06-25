@@ -24,8 +24,8 @@ Shader "WorldSpaceTrees/TreeLeafSwitcherAS"
 		_TranslucencyMap("TranslucencyMap", 2D) = "white" {}
 		_NormalMap("NormalMap", 2D) = "bump" {}
 		_MotionPowerWeightMask("MotionPowerWeightMask", 2D) = "white" {}
-		_MotionSpeed("MotionSpeed", Range( 0 , 10)) = 1
-		_MotionRange("MotionRange", Range( 0 , 10)) = 0.5
+		_MotionSpeed("MotionSpeed", Range( 0 , 10)) = 0
+		_MotionRange("MotionRange", Range( 0 , 10)) = 0
 		_CustomColorAmount("CustomColorAmount", Range( 0 , 1)) = 0
 		_CustomColorLow("CustomColorLow", Color) = (0.1362457,0.3308824,0.137588,0)
 		_CustomColorHigh("CustomColorHigh", Color) = (0.5528651,0.875,0.4503677,0)
@@ -100,7 +100,7 @@ Shader "WorldSpaceTrees/TreeLeafSwitcherAS"
 		{
 			UNITY_INITIALIZE_OUTPUT( Input, o );
 			float3 ase_vertexNormal = v.normal.xyz;
-			float mulTime44 = _Time.y * _MotionSpeed;
+			float mulTime44 = _Time.y * 0;//_MotionSpeed;
 			float3 ase_worldPos = mul( unity_ObjectToWorld, v.vertex );
 			float2 temp_cast_0 = (0.0).xx;
 			float3 objToWorld31 = mul( unity_ObjectToWorld, float4( float3( 0,0,0 ), 1 ) ).xyz;
@@ -120,7 +120,7 @@ Shader "WorldSpaceTrees/TreeLeafSwitcherAS"
 			float2 break15 = (( _WorldSpaceOffset )?( appendResult11 ):( temp_cast_0 ));
 			float2 appendResult24 = (float2(( break15.x + v.texcoord.xy.x + (( _SwitchRow )?( 0.5 ):( 0.0 )) ) , ( break15.y + v.texcoord.xy.y + (( _SwitchColumn )?( 0.5 ):( 0.0 )) )));
 			float4 tex2DNode53 = tex2Dlod( _MotionPowerWeightMask, float4( appendResult24, 0, 0.0) );
-			v.vertex.xyz += ( ase_vertexNormal * ( ( sin( ( mulTime44 + ( ase_worldPos.x + ase_worldPos.z ) ) ) * _MotionRange ) * tex2DNode53.r * tex2DNode53.g * tex2DNode53.b ) );
+			v.vertex.xyz += (ase_vertexNormal * ((sin((mulTime44 + (ase_worldPos.x + ase_worldPos.z))) * 0)));//_MotionRange ) * tex2DNode53.r * tex2DNode53.g * tex2DNode53.b ) );
 			v.vertex.w = 1;
 		}
 
