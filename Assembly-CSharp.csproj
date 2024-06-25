@@ -116,6 +116,7 @@
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\MoveAndRotate.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeManager.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\rotation.cs" />
+    <Compile Include="Assets\walkbytrigger.cs" />
     <Compile Include="Assets\_PROG\Scripts\HiddenBridge.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeOut.cs" />
     <Compile Include="Assets\_PROG\Scripts\Collect.cs" />
