@@ -116,8 +116,8 @@
     <Compile Include="Assets\_PROG\Scripts\Breakable.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\MoveAndRotate.cs" />
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
+    <Compile Include="Assets\_PROG\Scripts\MoveAndRotate.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeManager.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
