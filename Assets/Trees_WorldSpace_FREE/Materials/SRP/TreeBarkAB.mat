@@ -2,23 +2,44 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TreeBarkAB
   m_Shader: {fileID: 4800000, guid: c6b5cd736fa067643949d5a852a5e00b, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Normal_vegetation:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5d0fdf34fd554c06a83357eec40107a3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_93feb20a286f4ca39552fd9263358244:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_e6dec9f120f04e59a77ff603a7999190:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Albedo:
         m_Texture: {fileID: 2800000, guid: ce7f8d752eff4554889a2841119b89ed, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -48,6 +69,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Height_map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Height_map_B:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -83,11 +112,29 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - mask_vegetation:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
+    - Boolean_3f7fc101151e4131b707a42791e97a87: 0
+    - Boolean_7f51b6a6c137435996ce0b2d7c13b749: 0
+    - Normal_intensity_vegetation: 1
+    - Vector1_16F2F1E4: 0
+    - Vector1_4c33d9a155ae42e6a14b9a00011efd65: 0
+    - Vector1_4c79da0480814be5aee9322c1a0bbb84: 1
+    - Vector1_567c566872c9493b977c1bdc25626637: 0
+    - Vector1_813F3AD6: 0
+    - Vector1_DDCDCAD2: 0
+    - Vector1_d085d3b9a3204b02bdf829c89df62267: 0
+    - Vector1_dca4500ac6ca444db393442befd64c12: 0
     - _AO_power: 0.13
     - _AO_power1: 0.8
+    - _Adjust: 0
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
+    - _CustomColorAmount: 0
     - _Cutoff: 0.5
     - _DarknessOnSundown: 0.814
     - _DarknessOnSundown1: 0.75
@@ -100,22 +147,42 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NormalMapPower: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SimpleContrast: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SwitchUpDown: 0
+    - _Tessellation_Factor: 0
+    - _Tessellation_Intensity: 0
     - _ToggleSwitch0: 0
     - _ToggleSwitch1: 0
     - _UVSec: 0
+    - _Use_second_UV_set: 0
     - _ZWrite: 1
     - __dirty: 0
+    - bend_vegetation: 0.05
+    - turbulence_vegetation: 0.8
+    - wind_speed_vegetation: 0.5
+    - wind_vegetation: 1
     m_Colors:
+    - Color_479d2f6f2b79422db47e958052f9d90c: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_886dfdfc26f649d58647efaaa9da1145: {r: -1.5, g: 2, b: 0, a: 0}
+    - Vector2_8fd7a0f06ad34617a02aeac689625571: {r: -1.5, g: 2, b: 0, a: 0}
+    - Vector3_8df6f0d427cb4bed9ab0ed9fd7ef1f3d: {r: 1, g: 0, b: 1, a: 0}
     - _Base_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Base_Color1: {r: 1, g: 1, b: 1, a: 0}
     - _Base_Color_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.2342801, g: 0.9705882, b: 0, a: 1}
+    - _CustomColorHigh: {r: 0.58088225, g: 0.35406718, b: 0.25200036, a: 0}
+    - _CustomColorLow: {r: 0.16911757, g: 0.10822836, b: 0.08082824, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Main_Texture_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Main_Texture_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Spec_Color: {r: 0.058823526, g: 0.058823526, b: 0.058823526, a: 1}
     - _Spec_Color_Gloss: {r: 0.08823532, g: 0.08823532, b: 0.08823532, a: 0.153}
+    - _Texture_Offset_B: {r: 0, g: 0, b: 0, a: 0}
+    - _Texture_Tiling_B: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4680193818188888}
   - component: {fileID: 33622943311120956}
   - component: {fileID: 23885816642821400}
-  - component: {fileID: 8421879818787569233}
-  - component: {fileID: 705117073624549486}
+  - component: {fileID: 95560244769315396}
+  - component: {fileID: -5812680159974704176}
   m_Layer: 0
   m_Name: MainTreeC_Test_SRP
   m_TagString: Untagged
@@ -53,9 +53,9 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
@@ -63,8 +63,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33e561d917c7cd94695961036c7c82ce, type: 2}
-  - {fileID: 2100000, guid: 2505223071da93d40ba610651fdb0bf6, type: 2}
+  - {fileID: 2100000, guid: cd1191520a84ab24290cc641a6e0c246, type: 2}
+  - {fileID: 2100000, guid: 066ded06e6a8eb240893ea7b8efb66b4, type: 2}
+  - {fileID: 2100000, guid: 823cb446423dd7747b7454d5cf133e75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,8 +87,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8421879818787569233
-CapsuleCollider:
+--- !u!95 &95560244769315396
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303931366546006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: db23667b10d69ce478b6313b3f4df245, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &-5812680159974704176
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,35 +126,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Height: 26.716377
-  m_Direction: 1
-  m_Center: {x: 0, y: 13.21076, z: 0}
---- !u!205 &705117073624549486
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303931366546006}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.7700777, y: 13.21076, z: -0.5569668}
-  m_Size: 26.716377
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23885816642821400}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23885816642821400}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23885816642821400}
-  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.0820594, y: 5.343275, z: 4.817791}
+  m_Center: {x: -0.15401554, y: 2.6421518, z: -0.11139333}

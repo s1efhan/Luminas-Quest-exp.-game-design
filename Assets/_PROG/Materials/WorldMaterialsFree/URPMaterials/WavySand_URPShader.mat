@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WavySand_URPShader
-  m_Shader: {fileID: 4800000, guid: 02f9653e969ec11459c0ebb367b07cb8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6d118ceaa1d482544b8ec92406f6bcde, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
