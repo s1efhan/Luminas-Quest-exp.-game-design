@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d832c3c7dd3e2a48aaa968093906115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 2100000, guid: 5f47fbae82882b94c8d8874d874789cb, type: 2}
-  def: {fileID: 2100000, guid: ee2cbd091ade78d4d9ae2b3d259bc86b, type: 2}
+  material1: {fileID: 2100000, guid: ee2cbd091ade78d4d9ae2b3d259bc86b, type: 2}
+  material2: {fileID: 2100000, guid: 5f47fbae82882b94c8d8874d874789cb, type: 2}
+  fadeDuration: 1
 --- !u!1001 &4971396378735030382
 PrefabInstance:
   m_ObjectHideFlags: 0
