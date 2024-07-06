@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 152017934209085067}
   m_Layer: 0
   m_Name: Copy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8037782093200995227}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,21 +180,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireflys
       objectReference: {fileID: 0}
+    - target: {fileID: 72766363630468837, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 383987021054245555, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: 6.0123548e+19
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 1140402140067268440, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_BoundingSphereOverride.z
@@ -327,6 +331,14 @@ PrefabInstance:
     - target: {fileID: 4366918867722705185, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400999101708876492, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982253878512254220, guid: fbc68dd3513964c4e890b2a31373afee, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
