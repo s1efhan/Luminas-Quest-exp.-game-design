@@ -111,6 +111,7 @@
     <Compile Include="Assets\BrokenVector\LowPolyDungeon\Demo Scenes\ScreenshotMaker.cs" />
     <Compile Include="Assets\Scene Teleportation Kit\Scripts\teleport\Teleportable.cs" />
     <Compile Include="Assets\_PROG\Scripts\MoveAndRotate.cs" />
+    <Compile Include="Assets\PlatformController2.cs" />
     <Compile Include="Assets\_PROG\Scripts\CharacterAnimController.cs" />
     <Compile Include="Assets\_PROG\Scripts\FadeManager.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
